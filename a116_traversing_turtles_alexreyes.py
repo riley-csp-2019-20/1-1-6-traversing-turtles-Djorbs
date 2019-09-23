@@ -16,26 +16,24 @@ for s in turtle_shapes:
 #  Tells where the turtle should start
 startx = 0
 starty = 0
+direction = 180
 
 # Calls the turtles and moves them
 for t in my_turtles:
     new_color = turtle_colors.pop()
     t.pencolor(new_color)
     t.fillcolor(new_color)
-    direction = 54
-    t.setheading(direction)
     t.penup()
     t.goto(startx, starty)
     t.pendown()
-    t.right(45)     
+    t.setheading(direction)
+    t.right(93)     
     t.forward(50)
     direction = t.heading()
-    start_x = t.xcor()
-    start_y = t.ycor()
-
     #	Gives a new position for each turtle
-    startx = startx + 50
-    starty = starty + 50
+    startx = t.xcor()
+    starty = t.ycor()
+
 
 wn = trtl.Screen()
 wn.mainloop()
